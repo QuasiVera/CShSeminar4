@@ -1,6 +1,6 @@
 ﻿// Задача 37: Найдите произведение пар чисел в одномерном массиве. Парой считаем первый и последний элемент, второй и предпоследний и т.д. Результат запишите в новом массиве.
 Console.Clear();
-int size = new Random().Next(3, 7);
+int size = new Random().Next(3, 5);
 int[] array = GetArray(size, -10, 10);
 PrintArray(array);
 int[] result = PairMultiplication(array);
@@ -47,7 +47,7 @@ int[] PairMultiplication(int[] array)
     
     for (int i = 0; i < size; i++)
     {
-        if(array[i]!=array[array.Length-1-i])  // Чтобы не умножал сам на себя
+        if(i!=array.Length-1-i)  // Чтобы не умножал сам на себя
             res[i] = array[i]*array[array.Length-1-i];
         else
             res[i] = array[i];
