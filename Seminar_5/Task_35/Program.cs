@@ -3,12 +3,12 @@
 
 Console.Clear();
 int[] array = GetArray(123, -200, 200);
-PrintArray(array);
+
 Console.WriteLine(String.Join(" ", array));
-int countPositiveEl = CountPositiveEl(array, 10, 99);
+int counElements = CountElements(array, 10, 99);
 
+Console.WriteLine($"Count elements [10; 99] = {counElements} ");
 
-Console.WriteLine($"Count of positive = {countPositiveEl} ");
 //////////////////////////////////////////////////////////////////////////////////
 // Возвращает массив из size элементов,
 // заполненный случайными числами из промежутка [minValue, maxValue]
@@ -21,24 +21,14 @@ int[] GetArray(int size, int minValue, int maxValue)
     }
     return res;
 }
-// Возвращает число положительных чисел массива arr
-int CountPositiveEl(int[] arr, int min, int max)
+// Возвращает число элементов массива arr, входящих в отрезок [min, max] 
+int CountElements(int[] arr, int min, int max)
 {
-    int countPositiveEl = 0;
+    int counElements = 0;
     foreach (int el in arr)
     {
-        if (el >= min && el<=max) countPositiveEl += 1;
+        if (el >= min && el<=max) counElements += 1;
     }
-    return countPositiveEl;
+    return counElements;
 }
 
-//-----------Печатает массив
-void PrintArray(int[] array)
-{
-    Console.Write($"[ ");
-    for (int i = 0; i < array.Length; i++)
-    {
-        Console.Write(array[i] + " ");
-    }
-    Console.Write($"]");
-}
