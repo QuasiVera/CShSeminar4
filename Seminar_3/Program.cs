@@ -2,7 +2,7 @@
 //и выдаёт номер четверти плоскости, в которой находится эта точка.
 Console.Clear();
 Console.Write("Введите X: ");
-int X = int.Parse(Console.ReadLine());
+int X = int.Parse(Console.ReadLine() ?? " ");
  Console.Write("Введите Y: ");
 int Y = int.Parse(Console.ReadLine());
  if(X > 0 && Y > 0)
